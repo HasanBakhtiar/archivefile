@@ -1,0 +1,27 @@
+RewriteEngine on
+
+#RewriteCond %{SERVER_PORT} 80 
+# RewriteRule ^(.*)$ https://www.omargarayev.com/$1 [R,L]
+
+# RewriteCond %{HTTPS_HOST} ^omargarayev.com. [NC]
+# RewriteRule ^(.*)$ https://www.omargarayev.com/$1 [L,R=301,NC]
+# Canonical HTTPS/non-WWW
+
+
+
+#Seo url oluşturma
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+#404 hata sayfası yönlendirme kodu
+#ErrorDocument 404 https://site.com/
+
+RewriteRule ^about-([0-9a-zA-Z-_]+)  about.php?urln=$1 [L,QSA]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# “ea-php72” paketini varsayılan “PHP” programlama dili olarak ayarlayın.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php72 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
