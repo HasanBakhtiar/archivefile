@@ -13,7 +13,7 @@ include 'header.php';
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Məhsul Kateqoriya Artır <small>,
+            <h2>Arxiv Fayıl Kateqoriya Artır <small>,
 
             </small></h2>
             
@@ -33,18 +33,18 @@ include 'header.php';
 
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Məhsul Kateqoriya Ad EN<span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Arxiv Fayıl Kateqoriya Ad EN<span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mainproductcategory_name"   placeholder="Məhsul Kateqoriya Ad EN daxil edin" class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="mainarchivefilecategory_name"   placeholder="Arxiv Fayıl Kateqoriya Ad EN daxil edin" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Məhsul Kateqoriya Ad AZ <span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Arxiv Fayıl Kateqoriya Ad AZ <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mainproductcategory_nameaz"   placeholder="Məhsul Kateqoriya Ad AZ daxil edin" class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="mainarchivefilecategory_nameaz"   placeholder="Arxiv Fayıl Kateqoriya Ad AZ daxil edin" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
@@ -53,10 +53,10 @@ include 'header.php';
       
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Məhsul Kateqoriya  Sıra <span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Arxiv Fayıl Kateqoriya  Sıra <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mainproductcategory_row"  required="required" placeholder="Məhsul Kateqoriya Sıra daxil edin"  class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="mainarchivefilecategory_row"  required="required" placeholder="Arxiv Fayıl Kateqoriya Sıra daxil edin"  class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
@@ -69,7 +69,7 @@ include 'header.php';
             <div class="ln_solid"></div>
             <div class="form-group">
               <div align="right" class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                <button type="submit" name="mainproductcategoryadd" class="btn btn-success">Artır</button>
+                <button type="submit" name="mainarchivefilecategoryadd" class="btn btn-success">Artır</button>
               </div>
             </div>
 

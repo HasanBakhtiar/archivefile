@@ -3,12 +3,12 @@
 include 'header.php'; 
 
 
-$productask=$db->prepare("SELECT * FROM product where product_id=:product_id");
-$productask->execute(array(
-  'product_id' => $_GET['product_id']
+$archivefileask=$db->prepare("SELECT * FROM archivefile where archivefile_id=:archivefile_id");
+$archivefileask->execute(array(
+  'archivefile_id' => $_GET['archivefile_id']
   ));
 
-$productpull=$productask->fetch(PDO::FETCH_ASSOC);
+$archivefilepull=$archivefileask->fetch(PDO::FETCH_ASSOC);
 
 
 ?>
@@ -22,7 +22,7 @@ $productpull=$productask->fetch(PDO::FETCH_ASSOC);
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Məhsul Düzəlt <small>,
+            <h2>Arxiv Fayıl Düzəlt <small>,
             <?php 
                     if (@$_GET['sistem']=="ok") {
                       echo "<span style='font-size:15px;color:#30e714'>Əməliyyat uğurla yerinə yetirildi.</span>";
@@ -46,28 +46,28 @@ $productpull=$productask->fetch(PDO::FETCH_ASSOC);
               <form action="../connect/operation.php" method="POST" enctype="multipart/form-data" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Məhsul Url <span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Arxiv Fayıl Url <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="product_urlname"   value="<?php echo $productpull['product_urlname'] ?>" class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="archivefile_urlname"   value="<?php echo $archivefilepull['archivefile_urlname'] ?>" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Məhsul Ad EN <span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Arxiv Fayıl Ad EN <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="product_name"  required="required" value="<?php echo $productpull['product_name'] ?>" class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="archivefile_name"  required="required" value="<?php echo $archivefilepull['archivefile_name'] ?>" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Məhsul Ad AZ<span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Arxiv Fayıl Ad AZ<span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="product_nameaz"  required="required" value="<?php echo $productpull['product_nameaz'] ?>" class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="archivefile_nameaz"  required="required" value="<?php echo $archivefilepull['archivefile_nameaz'] ?>" class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
@@ -79,20 +79,20 @@ $productpull=$productask->fetch(PDO::FETCH_ASSOC);
 
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Məhsul Sıra <span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Arxiv Fayıl Sıra <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="product_row"  required="required" value="<?php echo $productpull['product_row'] ?>"  class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="archivefile_row"  required="required" value="<?php echo $archivefilepull['archivefile_row'] ?>"  class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Məhsul Məlumat EN<span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Arxiv Fayıl Məlumat EN<span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
 
-                  <textarea  class="ckeditor" id="editor1" name="product_text"><?php echo $productpull['product_text'] ?></textarea>
+                  <textarea  class="ckeditor" id="editor1" name="archivefile_text"><?php echo $archivefilepull['archivefile_text'] ?></textarea>
                 </div>
               </div>
 
@@ -124,11 +124,11 @@ $productpull=$productask->fetch(PDO::FETCH_ASSOC);
 
 
                 <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Məhsul Məlumat AZ<span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Arxiv Fayıl Məlumat AZ<span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
 
-                  <textarea  class="ckeditor" id="editor1" name="product_textaz"><?php echo $productpull['product_textaz'] ?></textarea>
+                  <textarea  class="ckeditor" id="editor1" name="archivefile_textaz"><?php echo $archivefilepull['archivefile_textaz'] ?></textarea>
                 </div>
               </div>
 
@@ -163,14 +163,14 @@ $productpull=$productask->fetch(PDO::FETCH_ASSOC);
 
 
 
-            <input type="hidden" name="product_id" value="<?php echo $productpull['product_id'] ?>">
-            <input type="hidden" name="product_photo" value="<?php echo $productpull['product_photo'] ?>">
+            <input type="hidden" name="archivefile_id" value="<?php echo $archivefilepull['archivefile_id'] ?>">
+            <input type="hidden" name="archivefile_photo" value="<?php echo $archivefilepull['archivefile_photo'] ?>">
 
 
             <div class="ln_solid"></div>
             <div class="form-group">
               <div align="right" class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                <button type="submit" name="productedit" class="btn btn-success">Yenilə</button>
+                <button type="submit" name="archivefileedit" class="btn btn-success">Yenilə</button>
               </div>
             </div>
 

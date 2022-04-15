@@ -2,8 +2,9 @@
 
 include 'header.php'; 
 
-$productcategoryask=$db->prepare("SELECT * FROM productcategory");
-$productcategoryask->execute();
+//Belirli veriyi seçme işlemi
+$archivefileask=$db->prepare("SELECT * FROM archivefile");
+$archivefileask->execute();
 
 
 ?>
@@ -18,12 +19,12 @@ $productcategoryask->execute();
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Məhsul Kateqoriya Siyahı <small>,
+            <h2>Arxiv Fayıl Siyahı <small>,
 
             <?php 
-                    if (@$_GET['stuation']=="ok") {
+                    if (@$_GET['sistem']=="ok") {
                       echo "<span style='font-size:15px;color:#30e714'>Əməliyyat uğurla yerinə yetirildi.</span>";
-                    }elseif(@$_GET['stuation']=="no"){
+                    }elseif(@$_GET['sistem']=="no"){
                       echo "<p style='color:red'>Əməliyyat uğursuz oldu</p>";
                     }else{
                       echo "";
@@ -37,7 +38,7 @@ $productcategoryask->execute();
             <div class="clearfix"></div>
 
             <div align="right">
-              <a href="productcategory-add"><button class="btn btn-success btn"> Artır</button></a>
+              <a href="archivefile-add"><button class="btn btn-success "> Artır</button></a>
 
             </div>
           </div>
@@ -55,6 +56,7 @@ $productcategoryask->execute();
                   <th>Sıra</th>
                   <th></th>
                   <th></th>
+                  <th></th>
                 </tr>
               </thead>
 
@@ -64,20 +66,20 @@ $productcategoryask->execute();
 
                 $say=0;
 
-                while($productcategorypull=$productcategoryask->fetch(PDO::FETCH_ASSOC)) { $say++?>
+                while($archivefilecek=$archivefileask->fetch(PDO::FETCH_ASSOC)) { $say++?>
 
 
                 <tr>
                  <td width="20"><?php echo $say ?></td>
-                 <td><?php echo $productcategorypull['productcategory_urlname'] ?></td>
-                 <td><?php echo $productcategorypull['productcategory_name'] ?></td>
-                 <td><?php echo $productcategorypull['productcategory_row'] ?></td>
+                 <td><?php echo $archivefilecek['archivefile_name'] ?></td>
+                 <td><?php echo $archivefilecek['archivefile_row'] ?></td>
 
                
 
 
-            <td><center><a href="productcategory-edit.php?productcategory_id=<?php echo $productcategorypull['productcategory_id']; ?>"><button class="btn btn-primary btn-xs">Düzəlt</button></a></center></td>
-            <td><center><a href="../connect/operation.php?productcategory_id=<?php echo $productcategorypull['productcategory_id']; ?>&productcategorydel=ok"><button class="btn btn-danger btn-xs">Sil</button></a></center></td>
+            <td><center><a href="archivefile-gallery.php?archivefile_id=<?php echo $archivefilecek['archivefile_id'] ?>"><button class="btn btn-success btn-xs">Qaleriya</button></a></center></td>
+            <td><center><a href="archivefile-edit.php?archivefile_id=<?php echo $archivefilecek['archivefile_id']; ?>"><button class="btn btn-primary btn-xs">Düzəlt</button></a></center></td>
+            <td><center><a href="../connect/operation.php?archivefile_id=<?php echo $archivefilecek['archivefile_id']; ?>&archivefilesil=ok"><button class="btn btn-danger btn-xs">Sil</button></a></center></td>
           </tr>
 
 

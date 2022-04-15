@@ -51,11 +51,11 @@ include 'header.php';
               </div>
               <form  action="../connect/operation.php" method="POST" enctype="multipart/form-data">
 
-              <input type="hidden" name="product_id" value="<?php echo $_GET['product_id']; ?>">
+              <input type="hidden" name="archivefile_id" value="<?php echo $_GET['archivefile_id']; ?>">
 
                 <div align="right" class="col-md-6">
-                  <button type="submit" name="productgallerydel"  class="btn btn-danger "><i class="fa fa-trash" aria-hidden="true"></i> Seçilənləri Sil</button>
-                  <a class="btn btn-success" href="product-gallery-download.php?product_id=<?php echo $_GET['product_id'];?>"><i class="fa fa-plus" aria-hidden="true"></i>Şəkilləri Yüklə</a>
+                  <button type="submit" name="archivefilegallerydel"  class="btn btn-danger "><i class="fa fa-trash" aria-hidden="true"></i> Seçilənləri Sil</button>
+                  <a class="btn btn-success" href="archivefile-gallery-download.php?archivefile_id=<?php echo $_GET['archivefile_id'];?>"><i class="fa fa-plus" aria-hidden="true"></i>Şəkilləri Yüklə</a>
                 </div>
                 <div class="clearfix"></div>
               </div>
@@ -69,11 +69,11 @@ include 'header.php';
                 $sayfada = 25;   // seyfede gosterilecek sekil sayi
 
 
-                $sorgu=$db->prepare("select * from product_gallery");
+                $sorgu=$db->prepare("select * from archivefile_gallery");
                 $sorgu->execute();
-                $toplam_productgallery=$sorgu->rowCount();
+                $toplam_archivefilegallery=$sorgu->rowCount();
 
-                $toplam_sayfa = ceil($toplam_productgallery / $sayfada);
+                $toplam_sayfa = ceil($toplam_archivefilegallery / $sayfada);
 
                   // eger seyfeye girilmemişse 1 deyek.
                 $sayfa = isset($_GET['page']) ? (int) $_GET['page'] : 1;
@@ -86,21 +86,21 @@ include 'header.php';
 
                 $limit = ($sayfa - 1) * $sayfada;
 
-                $productgallerysor=$db->prepare("select * from product_gallery where product_id=:product_id order by product_gallery_id DESC limit $limit,$sayfada");
-                $productgallerysor->execute(array(
-                  'product_id' => $_GET['product_id']
+                $archivefilegallerysor=$db->prepare("select * from archivefile_gallery where archivefile_id=:archivefile_id order by archivefile_gallery_id DESC limit $limit,$sayfada");
+                $archivefilegallerysor->execute(array(
+                  'archivefile_id' => $_GET['archivefile_id']
                   ));
 
-                  while($productgallerycek=$productgallerysor->fetch(PDO::FETCH_ASSOC)) { ?>
+                  while($archivefilegallerycek=$archivefilegallerysor->fetch(PDO::FETCH_ASSOC)) { ?>
 
 
 
                   <div class="col-md-55">
                    <label>
                     <div class="image view view-first">
-                      <img style="width: 250px; height: 100px; display: block;" src="../../<?php echo $productgallerycek['product_gallery_photo']; ?>" alt="image" />
+                      <img style="width: 250px; height: 100px; display: block;" src="../<?php echo $archivefilegallerycek['archivefile_gallery_photo']; ?>" alt="image" />
                       <div class="mask">
-                        <p> <?php echo $productgallerycek['product_gallery_id']; ?></p>
+                        <p> <?php echo $archivefilegallerycek['archivefile_gallery_id']; ?></p>
                         <div class="tools tools-bottom">
 
                           <!--<a href="#"><i class="fa fa-times"></i></a>-->
@@ -111,10 +111,10 @@ include 'header.php';
 
                     </div>
 
-                    <?php  @array("$productgalleryselect"); ?>
+                    <?php  @array("$archivefilegalleryselect"); ?>
 
 
-                    <input type="checkbox" name="productgalleryselect[]"  value="<?php echo $productgallerycek['product_gallery_id']; ?>" > Seç
+                    <input type="checkbox" name="archivefilegalleryselect[]"  value="<?php echo $archivefilegallerycek['archivefile_gallery_id']; ?>" > Seç
                   </label>
 
 
@@ -139,7 +139,7 @@ include 'header.php';
 
                       <li class="active">
 
-                        <a href="productgallery.php?page=<?php echo $s; ?>"><?php echo $s; ?></a>
+                        <a href="archivefilegallery.php?page=<?php echo $s; ?>"><?php echo $s; ?></a>
 
                       </li>
 
@@ -148,7 +148,7 @@ include 'header.php';
 
                       <li>
 
-                        <a href="productgallery.php?page=<?php echo $s; ?>"><?php echo $s; ?></a>
+                        <a href="archivefilegallery.php?page=<?php echo $s; ?>"><?php echo $s; ?></a>
 
                       </li>
 

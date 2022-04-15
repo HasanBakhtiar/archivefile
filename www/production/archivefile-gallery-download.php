@@ -38,7 +38,7 @@
 
                       <div align="right" class="col-md-9">
                      
-                        <a class="btn btn-success" href="product-gallery.php?product_id=<?php echo $_GET['product_id'];?>"><i class="fa fa-compass"  aria-hidden="true"></i> Yüklənmiş Şəkillərə Bax</a>
+                        <a class="btn btn-success" href="archivefile-gallery.php?archivefile_id=<?php echo $_GET['archivefile_id'];?>"><i class="fa fa-compass"  aria-hidden="true"></i> Yüklənmiş Şəkillərə Bax</a>
                       </div>
 
                       <div class="clearfix"></div>
@@ -47,9 +47,9 @@
                       <p>galleryya Şəkil artır.</p>
                       
 
-                      <form action="../connect/productgallery.php" class="dropzone" >
+                      <form action="../connect/archivefilegallery.php" class="dropzone" >
 
-                        <input type="hidden" name="product_id" value="<?php echo $_GET['product_id'];  ?>">
+                        <input type="hidden" name="archivefile_id" value="<?php echo $_GET['archivefile_id'];  ?>">
                         
                       </form>
 

@@ -3,12 +3,12 @@
 include 'header.php'; 
 
 
-$mainproductcategoryask=$db->prepare("SELECT * FROM mainproductcategory where mainproductcategory_id=:mainproductcategory_id");
-$mainproductcategoryask->execute(array(
-  'mainproductcategory_id' => $_GET['mainproductcategory_id']
+$mainarchivefilecategoryask=$db->prepare("SELECT * FROM mainarchivefilecategory where mainarchivefilecategory_id=:mainarchivefilecategory_id");
+$mainarchivefilecategoryask->execute(array(
+  'mainarchivefilecategory_id' => $_GET['mainarchivefilecategory_id']
   ));
 
-$mainproductcategorypull=$mainproductcategoryask->fetch(PDO::FETCH_ASSOC);
+$mainarchivefilecategorypull=$mainarchivefilecategoryask->fetch(PDO::FETCH_ASSOC);
 
 
 ?>
@@ -22,7 +22,7 @@ $mainproductcategorypull=$mainproductcategoryask->fetch(PDO::FETCH_ASSOC);
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Məhsul Kateqoriya Düzəlt <small>,
+            <h2>Arxiv Fayıl Kateqoriya Düzəlt <small>,
             <?php 
                     if (@$_GET['sistem']=="ok") {
                       echo "<span style='font-size:15px;color:#30e714'>Əməliyyat uğurla yerinə yetirildi.</span>";
@@ -46,28 +46,28 @@ $mainproductcategorypull=$mainproductcategoryask->fetch(PDO::FETCH_ASSOC);
            
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Məhsul Kateqoriya Ad EN <span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Arxiv Fayıl Kateqoriya Ad EN <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mainproductcategory_name"  required="required" value="<?php echo $mainproductcategorypull['mainproductcategory_name'] ?>"  class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="mainarchivefilecategory_name"  required="required" value="<?php echo $mainarchivefilecategorypull['mainarchivefilecategory_name'] ?>"  class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Məhsul Kateqoriya Ad AZ <span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Arxiv Fayıl Kateqoriya Ad AZ <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mainproductcategory_nameaz"  required="required" value="<?php echo $mainproductcategorypull['mainproductcategory_nameaz'] ?>"  class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="mainarchivefilecategory_nameaz"  required="required" value="<?php echo $mainarchivefilecategorypull['mainarchivefilecategory_nameaz'] ?>"  class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
 
               <div class="form-group">
-                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Məhsul Kateqoriya Sıra <span class="required">*</span>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Arxiv Fayıl Kateqoriya Sıra <span class="required">*</span>
                 </label>
                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <input type="text" id="first-name" name="mainproductcategory_row"  required="required" value="<?php echo $mainproductcategorypull['mainproductcategory_row'] ?>"  class="form-control col-md-7 col-xs-12">
+                  <input type="text" id="first-name" name="mainarchivefilecategory_row"  required="required" value="<?php echo $mainarchivefilecategorypull['mainarchivefilecategory_row'] ?>"  class="form-control col-md-7 col-xs-12">
                 </div>
               </div>
 
@@ -75,13 +75,13 @@ $mainproductcategorypull=$mainproductcategoryask->fetch(PDO::FETCH_ASSOC);
 
 
 
-            <input type="hidden" name="mainproductcategory_id" value="<?php echo $mainproductcategorypull['mainproductcategory_id'] ?>">
+            <input type="hidden" name="mainarchivefilecategory_id" value="<?php echo $mainarchivefilecategorypull['mainarchivefilecategory_id'] ?>">
 
 
             <div class="ln_solid"></div>
             <div class="form-group">
               <div align="right" class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                <button type="submit" name="mainproductcategoryedit" class="btn btn-success">Yenilə</button>
+                <button type="submit" name="mainarchivefilecategoryedit" class="btn btn-success">Yenilə</button>
               </div>
             </div>
 

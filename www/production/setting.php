@@ -12,7 +12,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Saytın Ümumi Quruluşu | <span>
+                    <h2>Arxiv Fayıl Ümumi Quruluşu | <span>
                     
                     <?php 
                     if (@$_GET['sistem']=="ok") {

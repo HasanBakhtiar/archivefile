@@ -2,8 +2,8 @@
 
 include 'header.php'; 
 
-$mainproductcategoryask=$db->prepare("SELECT * FROM mainproductcategory");
-$mainproductcategoryask->execute();
+$mainarchivefilecategoryask=$db->prepare("SELECT * FROM mainarchivefilecategory");
+$mainarchivefilecategoryask->execute();
 
 
 ?>
@@ -18,7 +18,7 @@ $mainproductcategoryask->execute();
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Məhsul Əsas Kateqoriya Siyahı <small>,
+            <h2>Arxiv Fayıl Əsas Kateqoriya Siyahı <small>,
 
             <?php 
                     if (@$_GET['stuation']=="ok") {
@@ -37,7 +37,7 @@ $mainproductcategoryask->execute();
             <div class="clearfix"></div>
 
             <div align="right">
-              <a href="mainproductcategory-add"><button class="btn btn-success btn"> Artır</button></a>
+              <a href="mainarchivefilecategory-add"><button class="btn btn-success btn"> Artır</button></a>
 
             </div>
           </div>
@@ -63,19 +63,19 @@ $mainproductcategoryask->execute();
 
                 $say=0;
 
-                while($mainproductcategorypull=$mainproductcategoryask->fetch(PDO::FETCH_ASSOC)) { $say++?>
+                while($mainarchivefilecategorypull=$mainarchivefilecategoryask->fetch(PDO::FETCH_ASSOC)) { $say++?>
 
 
                 <tr>
                  <td width="20"><?php echo $say ?></td>
-                 <td><?php echo $mainproductcategorypull['mainproductcategory_name'] ?></td>
-                 <td><?php echo $mainproductcategorypull['mainproductcategory_row'] ?></td>
+                 <td><?php echo $mainarchivefilecategorypull['mainarchivefilecategory_name'] ?></td>
+                 <td><?php echo $mainarchivefilecategorypull['mainarchivefilecategory_row'] ?></td>
 
                
 
 
-            <td><center><a href="mainproductcategory-edit.php?mainproductcategory_id=<?php echo $mainproductcategorypull['mainproductcategory_id']; ?>"><button class="btn btn-primary btn-xs">Düzəlt</button></a></center></td>
-            <td><center><a href="../connect/operation.php?mainproductcategory_id=<?php echo $mainproductcategorypull['mainproductcategory_id']; ?>&mainproductcategorydel=ok"><button class="btn btn-danger btn-xs">Sil</button></a></center></td>
+            <td><center><a href="mainarchivefilecategory-edit.php?mainarchivefilecategory_id=<?php echo $mainarchivefilecategorypull['mainarchivefilecategory_id']; ?>"><button class="btn btn-primary btn-xs">Düzəlt</button></a></center></td>
+            <td><center><a href="../connect/operation.php?mainarchivefilecategory_id=<?php echo $mainarchivefilecategorypull['mainarchivefilecategory_id']; ?>&mainarchivefilecategorydel=ok"><button class="btn btn-danger btn-xs">Sil</button></a></center></td>
           </tr>
 
 

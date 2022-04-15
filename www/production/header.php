@@ -101,27 +101,14 @@ if ($say==0) {
                 <li><a href="index"><i class="fa fa-laptop"></i> Ana Səhifə <span class="label label-success pull-right"><?php echo $infopull['setting_title']; ?> </span></a></li>
                 
 
-                  <li><a><i class="fa fa-home"></i> Saytın Sistemi <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="setting">Ümumi Quruluş</a></li>
-                      <li><a href="contact">Ümumi Əlaqə</a></li>
-                   
-                    </ul>
-                  </li>
+                 
 
-                  <li><a href="about"><i class="fa fa-info"></i> Haqqımızda</a></li>
-                  <li><a href="slider"><i class="fa fa-photo"></i> Slider</a></li>
+                  
+                  <li><a href="mainarchivefilecategory"><i class="fa fa-file"></i>Arxiv Fayl Əsas Kateqoriya</a></li>
+                  <li><a href="archivefilecategory"><i class="fa fa-file"></i>Arxiv Fayl Alt Kateqoriya</a></li>
+                  <li><a href="archivefile"><i class="fa fa-file"></i>Arxiv Fayllar</a></li>
+                  
 
-                  <li><a><i class="fa fa-list"></i> Məhsul  <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="mainproductcategory">Məhsul Əsas Kateqoriya</a></li>
-                      <li><a href="productcategory">Məhsul Kateqoriya</a></li>
-                      <li><a href="product">Məhsullar</a></li>
-                   
-                    </ul>
-                  </li>
-
-                  <li><a href="gallery"><i class="fa fa-photo"></i> Gallery</a></li>
                
 
                   
@@ -146,7 +133,7 @@ if ($say==0) {
               <a data-toggle="tooltip" id="#" data-placement="top" title="Böyüt" >
                 <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Sayta Bax" href="http://boltcenter.az/">
+              <a data-toggle="tooltip" data-placement="top" title="Sayta Bax" href="#">
                 <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
               </a>
               <a data-toggle="tooltip" data-placement="top" title="Çıxış" href="logout.php">
